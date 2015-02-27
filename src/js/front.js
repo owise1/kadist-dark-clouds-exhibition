@@ -3,7 +3,7 @@ var min_w = 300; // minimum video width allowed
 var vid_w_orig;  // original video dimensions
 var vid_h_orig;
 
-jQuery(function() { // runs after DOM has loaded
+jQuery(function($) { // runs after DOM has loaded
 
     vid_w_orig = parseInt(jQuery('video').attr('width'));
     vid_h_orig = parseInt(jQuery('video').attr('height'));
@@ -11,6 +11,7 @@ jQuery(function() { // runs after DOM has loaded
 
     jQuery(window).resize(function () { resizeToCover(); });
     jQuery(window).trigger('resize');
+
 });
 
 function resizeToCover() {
