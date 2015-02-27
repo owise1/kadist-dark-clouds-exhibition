@@ -1,0 +1,79 @@
+@import "bootstrap.less";
+@font-face {
+  font-family: 'DroidSans';
+  src: url('../fonts/DroidSans.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'DroidSans';
+  src: url('../fonts/DroidSans-Bold.ttf') format('ttf');
+  font-weight: bold;
+}
+
+body{
+  color: #fff;
+  position: relative;
+  font-family: 'DroidSans';
+  font-size: 18px;
+}
+h1, h2, h3, h4,h5{
+  font-family: 'DroidSans';
+}
+h2{
+  margin-top: 10px;
+}
+#main{
+  padding: 50px 0;
+}
+a{
+	color:@gray;
+	cursor:pointer;
+	&.loading{
+		color:transparent;
+		background:url(../img/ajax-loader.gif) no-repeat;
+		display:inline-block;
+		width:16px;
+		height:16px;
+	}
+}
+#video-viewport {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    z-index: -1; /* for accessing the video by click */
+}
+.admin{
+  color: #000;
+}
+
+i{
+	font-size: 20px;
+}
+.db100{
+  display: block;
+  width: 70%;
+}
+.media-listing{
+  video{
+    width: 100%;
+  }
+	ul{
+		padding:0;
+		li{
+      list-style: none;
+      padding: 20px 0;
+		}
+	}
+	img.cover{
+		display:block;
+		width:100%;
+	}
+}
+@media(max-width: 768px){
+  .db100{
+    width: 100%;
+  }
+  #main{
+    padding: 50px 10px;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/
+bower_components/
+app/.couchapprc
+*.swp
+*.DS_Store

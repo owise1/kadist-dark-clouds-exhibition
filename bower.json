@@ -1,0 +1,20 @@
+{
+  "name": "liblib-exhib",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.2.19",
+    "bootstrap-less": "~3.1.1",
+    "CornerCouch": "*",
+    "ramda": "~0.10.0",
+    "jquery": "~2.1.3",
+    "angular-sanitize": "~1.3.14"
+  },
+  "overrides": {
+    "bootstrap-less": {
+      "ignore": true
+    }
+  },
+  "resolutions": {
+    "angular": "1.2.19"
+  }
+}

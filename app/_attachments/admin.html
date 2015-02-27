@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="LibLibExhibApp">
+  <head>
+    <title>Exhibition</title>
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <script src="script/vendor.min.js"></script>
+
+  </head>
+  <body class="admin" ng-controller="ListingCtrl">
+  	<div class="container" id="main">
+  		<div class="row">
+  			<div class="col-md-12">
+        </div>
+        <div class="col-md-6">
+          <label>Exhibition Title</label>
+          <input class="form-control" ng-model="exhibitionDoc.title" />
+          <label>Exhibition Description HTML</label>
+          <textarea rows="20" class="form-control" ng-model="exhibitionDoc.description"></textarea>
+          <button class="btn btn-primary" ng-click="save(exhibitionDoc)">Save</button>
+          <h3>How to change wifi name</h3>
+          <pre> 
+1. Open Terminal
+2. ssh pi@kadist.local
+3. password "raspberry"
+4. sudo nano /etc/hostapd/hostapd.conf
+5. change after "ssid="
+6. exit nano ctrl-x
+7. reboot - unplug or "sudo reboot"
+          </pre>
+        </div>
+        <div class="col-md-6">
+          <div>
+            <label for="">Upload Video:</label> <input type="file" onchange="angular.element(this).scope().upload(this)" />
+          </div>
+          <h2>Works</h2>
+          <div class="media-listing">
+            <ul class="clearfix">
+              <li ng-repeat="media in medias">
+                <a href="{{media.media.url}}" target="_blank" ng-if="media.coverImg"><img ng-src="{{media.coverImg}}" class="cover"/></a>
+                <label>Title</label>
+                <input class="form-control" ng-model="media.info.title" />
+                <label>Description</label>
+                <textarea class="form-control" ng-model="media.info.description"></textarea>
+                <a href="{{media.media.url}}" target="_blank">{{media.name}}</a>
+                <small>{{media.content_type}}</small>
+                <div ng-hide="media.coverImg">
+                  <label for="">Cover Image:</label> <input type="file" fileread="media.file" />
+                </div>
+                <button ng-click="save(media)" class="btn btn-primary">Save</button>
+                <button ng-click="del(media)" class="btn">Delete</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+  		</div>
+  	</div>
+	  <script src="script/app.min.js"></script>
+	</body>
+
+</html>

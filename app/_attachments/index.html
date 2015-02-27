@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="LibLibExhibApp">
+  <head>
+    <title>Exhibition</title>
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <script src="script/vendor.min.js"></script>
+
+  </head>
+  <body ng-controller="ListingCtrl" class="front">
+    <div id="video-viewport"><video width="300" height="150" id="clouds" src="img/clouds.mp4" autoplay loop muted></video></div>
+  	<div id="main" class="container">
+  		<div class="row">
+
+        <div class="col-md-6">
+          <h1 ng-bind="exhibitionDoc.title"></h1>
+          <div ng-bind-html="exhibitionDoc.description | sanitize"></div>
+        </div>
+        <div class="col-md-6">
+          <div class="media-listing">
+            <ul class="clearfix" >
+              <li ng-repeat="media in medias">
+                <a ng-href="{{media.media.url}}"><img class="db100" ng-src="{{media.coverImg}}" /></a>
+                <h2>{{media.info.title}}</h2>
+                <p>{{media.info.description}}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+  		</div>
+  	</div>
+	  <script src="script/app.min.js"></script>
+	</body>
+
+</html>
