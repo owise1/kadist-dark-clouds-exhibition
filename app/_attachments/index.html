@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="LibLibExhibApp">
+<html ng-app="LibLibExhibApp" ng-controller="ListingCtrl">
   <head>
-    <title>Exhibition</title>
+    <title ng-bind="exhibitionDoc.title || 'Kadist'">Kadist</title>
     <link rel="stylesheet" href="style/style.css" type="text/css">
     <script src="script/vendor.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no" initial-scale="1.0">
 
   </head>
-  <body ng-controller="ListingCtrl" class="front">
+  <body  class="front">
     <div id="video-viewport"><video width="300" height="150" id="clouds" poster="img/clouds.png" src="img/clouds.mp4" controls="false" autoplay loop muted></video></div>
   	<div id="main" class="container">
   		<div class="row">
