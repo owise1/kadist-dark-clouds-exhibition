@@ -24,7 +24,7 @@ LibLibExhibApp.controller('ListingCtrl', ['$scope', '$http', 'cornercouch', func
   function fetchExhibitionDoc(){
     $scope.db.newDoc().load(exhibitionID)
     .success(function(doc){
-      $scope.exhibitionDoc = doc;
+      $scope.exhibitionDoc = processDoc(doc);
     })
     .error(function(err){
       $scope.db.newDoc({ _id : exhibitionID }).save()
@@ -36,7 +36,6 @@ LibLibExhibApp.controller('ListingCtrl', ['$scope', '$http', 'cornercouch', func
     })
 
   }
-  fetchExhibitionDoc();
 
   $scope.upload = function(elem){
     var files = [];
@@ -79,6 +78,7 @@ LibLibExhibApp.controller('ListingCtrl', ['$scope', '$http', 'cornercouch', func
     $scope.db.query(config.design, 'media', { reduce : false, limit : 10, include_docs : true })
     .success(function(resp){
       $scope.medias = resp.rows.map(R.prop('doc')).map(processDoc);
+      fetchExhibitionDoc();
     });
   }
   getListing();

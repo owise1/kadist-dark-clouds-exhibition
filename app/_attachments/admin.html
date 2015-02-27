@@ -16,6 +16,14 @@
           <input class="form-control" ng-model="exhibitionDoc.title" />
           <label>Exhibition Description HTML</label>
           <textarea rows="20" class="form-control" ng-model="exhibitionDoc.description"></textarea>
+          <!--
+          <div class="well">
+            <h5>Current Video: {{exhibitionDoc.coverImg}}</h5>
+            <label for="">Background Video:</label> <input type="file" fileread="exhibitionDoc.file" />
+            <label>Video Width</label><input type="text" ng-model="exhibitionDoc.videoWidth" /><br/>
+            <label>Video Height</label><input type="text" ng-model="exhibitionDoc.videoHeight" />
+          </div>
+          -->
           <button class="btn btn-primary" ng-click="save(exhibitionDoc)">Save</button>
           <h3>How to change wifi name</h3>
           <pre> 
