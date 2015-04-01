@@ -16,8 +16,13 @@ var LibLibExhibApp = angular.module('LibLibExhibApp', ['CornerCouch', 'ngSanitiz
   ]);
 
 LibLibExhibApp.controller('ListingCtrl', ['$scope', '$http', 'cornercouch', function ($scope, $http, cornercouch) {
-  var config = window._pl;
-  $scope.db      = cornercouch().getDB(config.db);
+  var config = window._pl
+  $scope.db = cornercouch().getDB(config.db)
+  $scope.touch = Modernizr.touch
+  $scope.currentVid = false
+  $scope.setCurrent = function (media) {
+    $scope.currentVid = media 
+  }
 
   // exhibition information
   var exhibitionID = 'liblib-exhib-exhibition'; // figure out a way to have more than one of these

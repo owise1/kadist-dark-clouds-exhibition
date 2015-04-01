@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, user-scalable=no" initial-scale="1.0">
 
   </head>
-  <body  class="front">
-    <div id="video-viewport"><video width="300" height="150" id="clouds" poster="img/clouds.png" src="img/clouds.mp4" controls="false" autoplay loop muted></video></div>
+  <body  class="front" oncontextmenu="return false;"  ng-class="{ black : currentVid }">
+    <div id="video-viewport" ng-hide="currentVid"><video width="300" height="150" id="clouds" poster="img/clouds.png" src="img/clouds.mp4" controls="false" autoplay loop muted></video></div>
   	<div id="main" class="container">
-  		<div class="row">
-
+  		<div class="row" ng-hide="currentVid">
         <div class="col-md-6">
           <h1 ng-bind="exhibitionDoc.title"></h1>
           <div ng-bind-html="exhibitionDoc.description | sanitize"></div>
@@ -20,7 +19,8 @@
           <div class="media-listing">
             <ul class="clearfix" >
               <li ng-repeat="media in medias">
-                <a ng-href="{{media.media.url}}"><img class="db100" ng-src="{{media.coverImg}}" /></a>
+                <a ng-href="{{media.media.url}}" ng-show="touch"><img class="db100" ng-src="{{media.coverImg}}" /></a>
+                <a ng-click="setCurrent(media)" ng-hide="touch"><img class="db100" ng-src="{{media.coverImg}}" /></a>
                 <h2>{{media.info.title}}</h2>
                 <p>{{media.info.description}}</p>
               </li>
@@ -28,6 +28,10 @@
           </div>
         </div>
   		</div>
+      <div id="video_wrap" ng-if="currentVid" class="text-center">
+        <video autoplay ng-src="{{currentVid.media.url}}" loop controls="controls"></video><br/>
+        <a ng-click="setCurrent(false)">[x]</a>
+      </div>
   	</div>
 	  <script src="script/app.min.js"></script>
 	</body>

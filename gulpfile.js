@@ -18,10 +18,12 @@ var paths = {
 };
 
 gulp.task("vendor", function(){
-    gulp.src(mainBowerFiles())
-    .pipe(uglify())
-    .pipe(concat('vendor.min.js'))
-    .pipe(gulp.dest(paths.scriptDest));
+  var files = mainBowerFiles()
+  files.push('bower_components/modernizr/modernizr.js')
+  gulp.src(files)
+  .pipe(uglify())
+  .pipe(concat('vendor.min.js'))
+  .pipe(gulp.dest(paths.scriptDest))
 });
 
 gulp.task("push", ['vendor', 'couchapp'], function(){

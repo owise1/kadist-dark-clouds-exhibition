@@ -1,4 +1,3 @@
-
 var min_w = 300; // minimum video width allowed
 var vid_w_orig;  // original video dimensions
 var vid_h_orig;
