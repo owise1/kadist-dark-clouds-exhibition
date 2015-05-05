@@ -1,23 +1,36 @@
 @import "bootstrap.less";
 @font-face {
-  font-family: 'DroidSans';
-  src: url('../fonts/DroidSans.eot?#iefix') format('embedded-opentype'),  url('../fonts/DroidSans.woff') format('woff'), url('../fonts/DroidSans.ttf')  format('truetype'), url('../fonts/DroidSans.svg#DroidSans') format('svg');
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Regular.ttf')  format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-/*@font-face {*/
-  /*font-family: 'DroidSans';*/
-  /*src: url('../fonts/DroidSans-Bold.ttf') format('ttf');*/
-  /*font-weight: bold;*/
-/*}*/
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Bold.ttf')  format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Italic.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-BoldItalic.ttf')  format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
 
 video#clouds::-webkit-media-controls {
     display:none !important;
 }
 body{
-  color: #fff;
+  /*color: #fff;*/
   position: relative;
-  font-family: 'DroidSans', serif;
+  font-family: 'Lora', serif;
   font-size: 18px;
   &.black{
     background-color: #000;
@@ -33,7 +46,7 @@ h2{
   text-align: center;
 }
 #main{
-  padding: 50px 0;
+  padding: 10px 0 50px;
 }
 a{
 	color:@gray;

@@ -15,16 +15,10 @@
         <div class="col-md-6">
           <label>Exhibition Title</label>
           <input class="form-control" ng-model="exhibitionDoc.title" />
-          <label>Exhibition Description HTML</label>
+          <label>Top HTML</label>
           <textarea rows="20" class="form-control" ng-model="exhibitionDoc.description"></textarea>
-          <!--
-          <div class="well">
-            <h5>Current Video: {{exhibitionDoc.coverImg}}</h5>
-            <label for="">Background Video:</label> <input type="file" fileread="exhibitionDoc.file" />
-            <label>Video Width</label><input type="text" ng-model="exhibitionDoc.videoWidth" /><br/>
-            <label>Video Height</label><input type="text" ng-model="exhibitionDoc.videoHeight" />
-          </div>
-          -->
+          <label>Footer HTML</label>
+          <textarea rows="20" class="form-control" ng-model="exhibitionDoc.footer"></textarea>
           <button class="btn btn-primary" ng-click="save(exhibitionDoc)">Save</button>
           <h3>How to change wifi name</h3>
           <pre> 
@@ -56,7 +50,16 @@
                 <label>Title</label>
                 <input class="form-control" ng-model="media.info.title" />
                 <label>Description</label>
-                <textarea class="form-control" ng-model="media.info.description"></textarea>
+                <textarea class="form-control" rows="5" ng-model="media.info.description"></textarea>
+                <div class="row" style="padding-top: 10px">
+                  <div class="form-group form-group-sm">
+                    <label class="col-sm-3 control-label">Display Order</label>
+                    <div class="col-sm-4">
+                      <input class="form-control " ng-model="media.info.order" />
+                      <p class="help-block small"><small>Lower numbers come first</small></p>
+                    </div>
+                  </div>
+                </div>
                 <a href="{{media.media.url}}" target="_blank">{{media.name}}</a>
                 <small>{{media.content_type}}</small>
                 <div ng-hide="media.coverImg">

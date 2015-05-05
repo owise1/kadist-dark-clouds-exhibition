@@ -12,7 +12,7 @@ var mainBowerFiles = require('main-bower-files');
 
 var paths = {
   scripts: [],
-  watch : ['app/_attachments/index.html', 'app/views/**', 'src/**'],
+  watch : ['app/_attachments/admin.html', 'app/_attachments/index.html', 'app/views/**', 'src/**'],
   scriptDest : "./app/_attachments/script",
   cssDest : "./app/_attachments/style"
 };

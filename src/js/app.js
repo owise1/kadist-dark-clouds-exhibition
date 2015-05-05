@@ -82,7 +82,9 @@ LibLibExhibApp.controller('ListingCtrl', ['$scope', '$http', 'cornercouch', func
   function getListing(){
     $scope.db.query(config.design, 'media', { reduce : false, limit : 10, include_docs : true })
     .success(function(resp){
-      $scope.medias = resp.rows.map(R.prop('doc')).map(processDoc);
+      $scope.medias = resp.rows.map(R.prop('doc')).map(processDoc).sort( function (a,b) {
+        return parseInt(a.info.order, 10) > parseInt(b.info.order, 10)
+      });
       fetchExhibitionDoc();
     });
   }

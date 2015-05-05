@@ -8,24 +8,27 @@
 
   </head>
   <body  class="front" oncontextmenu="return false;"  ng-class="{ black : currentVid }">
-    <div id="video-viewport" ng-hide="currentVid"><video width="300" height="150" id="clouds" poster="img/clouds.png" src="img/clouds.mp4" controls="false" autoplay loop muted></video></div>
+    <!--<div id="video-viewport" ng-hide="currentVid"><video width="300" height="150" id="clouds" poster="img/clouds.png" src="img/clouds.mp4" controls="false" autoplay loop muted></video></div>-->
   	<div id="main" class="container">
   		<div class="row" ng-hide="currentVid">
-        <div class="col-md-6">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
           <h1 ng-bind="exhibitionDoc.title"></h1>
           <div ng-bind-html="exhibitionDoc.description | sanitize"></div>
-        </div>
-        <div class="col-md-6">
           <div class="media-listing">
             <ul class="clearfix" >
               <li ng-repeat="media in medias">
                 <a ng-href="{{media.media.url}}" ng-show="touch"><img class="db100" ng-src="{{media.coverImg}}" /></a>
                 <a ng-click="setCurrent(media)" ng-hide="touch"><img class="db100" ng-src="{{media.coverImg}}" /></a>
-                <h2>{{media.info.title}}</h2>
+                <a ng-href="{{media.media.url}}" ng-show="touch">
+                </a>
+                <a ng-click="setCurrent(media)" ng-hide="touch">
+                  <h2>{{media.info.title}}</h2>
+                </a>
                 <p>{{media.info.description}}</p>
               </li>
             </ul>
           </div>
+          <footer ng-bind-html="exhibitionDoc.footer | sanitize"></footer>
         </div>
   		</div>
       <div id="video_wrap" ng-if="currentVid" class="text-center">
