@@ -9,6 +9,7 @@
   </head>
   <body  class="front" oncontextmenu="return false;"  ng-class="{ black : currentVid }">
     <!--<div id="video-viewport" ng-hide="currentVid"><video width="300" height="150" id="clouds" poster="img/clouds.png" src="img/clouds.mp4" controls="false" autoplay loop muted></video></div>-->
+
   	<div id="main" class="container">
   		<div class="row" ng-hide="currentVid">
         <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
@@ -20,11 +21,12 @@
                 <a ng-href="{{media.media.url}}" ng-show="touch"><img class="db100" ng-src="{{media.coverImg}}" /></a>
                 <a ng-click="setCurrent(media)" ng-hide="touch"><img class="db100" ng-src="{{media.coverImg}}" /></a>
                 <a ng-href="{{media.media.url}}" ng-show="touch">
+                  <h2 ng-bind-html="media.info.title | sanitize"></h2>
                 </a>
                 <a ng-click="setCurrent(media)" ng-hide="touch">
-                  <h2>{{media.info.title}}</h2>
+                  <h2 ng-bind-html="media.info.title | sanitize"></h2>
                 </a>
-                <p>{{media.info.description}}</p>
+                <div ng-bind-html="media.info.description | sanitize"></div>
               </li>
             </ul>
           </div>
