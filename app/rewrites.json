@@ -8,6 +8,10 @@
   "to" : "admin.html"
 },
 {
+  "from" : "library/test/success.html",
+  "to" : "nothing.html"
+},
+{
   "from" : "/script/:file",
   "to" : "/script/:file"
 },
