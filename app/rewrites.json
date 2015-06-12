@@ -8,6 +8,10 @@
   "to" : "admin.html"
 },
 {
+  "from" : "dialog",
+  "to" : "dialog.html"
+},
+{
   "from" : "library/test/success.html",
   "to" : "/_show/dialog/123"
 },
