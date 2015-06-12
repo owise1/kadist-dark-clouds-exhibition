@@ -9,7 +9,7 @@
 },
 {
   "from" : "library/test/success.html",
-  "to" : "nothing.html"
+  "to" : "/_show/dialog/123"
 },
 {
   "from" : "/script/:file",
