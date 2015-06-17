@@ -13,7 +13,7 @@
 },
 {
   "from" : "library/test/success.html",
-  "to" : "/_show/dialog/123"
+  "to" : "dialog.html"
 },
 {
   "from" : "/script/:file",
