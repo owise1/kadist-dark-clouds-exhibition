@@ -24,6 +24,10 @@ LibLibExhibApp.controller('ListingCtrl', ['$scope', '$http', 'cornercouch', func
     $scope.currentVid = media 
   }
 
+  $scope.urlify = function (what) {
+    return 'http://' + window.location.host + what
+  }
+
   // exhibition information
   var exhibitionID = 'liblib-exhib-exhibition'; // figure out a way to have more than one of these
   function fetchExhibitionDoc(){

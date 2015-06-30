@@ -33,7 +33,7 @@
         </div>
   		</div>
       <div id="video_wrap" ng-if="currentVid" class="text-center">
-        <video autoplay ng-src="{{currentVid.media.url}}" loop controls="controls"></video><br/>
+        <video autoplay ng-src="{{urlify(currentVid.media.url)}}" loop controls="controls"></video><br/>
         <a ng-click="setCurrent(false)">[x]</a>
       </div>
   	</div>

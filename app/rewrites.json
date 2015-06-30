@@ -9,11 +9,11 @@
 },
 {
   "from" : "dialog",
-  "to" : "dialog.html"
+  "to" : "index.html"
 },
 {
   "from" : "library/test/success.html",
-  "to" : "dialog.html"
+  "to" : "index.html"
 },
 {
   "from" : "/script/:file",
