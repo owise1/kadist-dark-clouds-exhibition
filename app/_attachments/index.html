@@ -17,12 +17,12 @@
           <div class="media-listing">
             <ul class="clearfix" >
               <li ng-repeat="media in medias">
-                <a ng-href="{{media.media.url}}" ng-show="touch"><img class="db100" ng-src="{{media.coverImg}}" /></a>
-                <a ng-click="setCurrent(media)" ng-hide="touch"><img class="db100" ng-src="{{media.coverImg}}" /></a>
-                <a ng-href="{{media.media.url}}" ng-show="touch">
+                <a ng-href="{{media.media.url}}" ng-show="videosProtected()"><img class="db100" ng-src="{{media.coverImg}}" /></a>
+                <a ng-click="setCurrent(media)" ng-hide="videosProtected()"><img class="db100" ng-src="{{media.coverImg}}" /></a>
+                <a ng-href="{{media.media.url}}" ng-show="videosProtected()">
                   <h2 ng-bind-html="media.info.title | sanitize"></h2>
                 </a>
-                <a ng-click="setCurrent(media)" ng-hide="touch">
+                <a ng-click="setCurrent(media)" ng-hide="videosProtected()">
                   <h2 ng-bind-html="media.info.title | sanitize"></h2>
                 </a>
                 <div ng-bind-html="media.info.description | sanitize"></div>

@@ -28,6 +28,11 @@ LibLibExhibApp.controller('ListingCtrl', ['$scope', '$http', 'cornercouch', func
     return 'http://' + window.location.host + what
   }
 
+  var isDialog = /dialog/.test(window.location.href)
+  $scope.videosProtected = function (){
+    return Modernizr.touch || isDialog 
+  }
+
   // exhibition information
   var exhibitionID = 'liblib-exhib-exhibition'; // figure out a way to have more than one of these
   function fetchExhibitionDoc(){
